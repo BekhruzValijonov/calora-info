@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deleting your data — Calora AI</title>
+<meta name="description" content="How to delete your Calora AI data: what is erased, what is kept, and how long anything is retained.">
+<link rel="icon" href="assets/icon.png" type="image/png">
+<meta name="theme-color" content="#f5f5f5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --canvas:#f5f5f5; --surface:#ffffff; --surface-sunk:#f0f0f0;
+  --ink:#171717; --text-2:#7a7a7a; --text-3:#9b9b9b;
+  --border:#ededed; --energy:#dd5f3c;
+  --font:"Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --mono:"Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --r-md:14px; --r-lg:24px; --r-full:999px;
+  --shadow-card:0 2px 12px rgba(0,0,0,.06);
+  --shell:min(760px, 100% - 8vw);
+}
+*,*::before,*::after{ box-sizing:border-box }
+html{ -webkit-text-size-adjust:100% }
+body{
+  margin:0; background:var(--canvas); color:var(--ink);
+  font-family:var(--font); font-size:1.0625rem; line-height:1.62;
+  letter-spacing:-.006em; -webkit-font-smoothing:antialiased;
+}
+img{ max-width:100%; height:auto; display:block }
+a{ color:inherit }
+.shell{ width:var(--shell); margin-inline:auto }
+
+.masthead{ border-bottom:1px solid var(--border); background:var(--canvas) }
+.masthead__inner{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding-block:.8rem }
+.wordmark{ display:flex; align-items:center; gap:.6rem; font-weight:600; text-decoration:none; letter-spacing:-.02em }
+.wordmark img{ width:28px; height:28px; border-radius:8px }
+.back{ font-size:.875rem; color:var(--text-2); text-decoration:none }
+.back:hover{ color:var(--ink) }
+
+main{ padding-block:clamp(2.5rem,6vw,4.5rem) }
+h1{ font-size:clamp(2rem,5vw,2.9rem); font-weight:600; letter-spacing:-.035em; line-height:1.08; margin:0 }
+h2{ font-size:clamp(1.25rem,2.4vw,1.55rem); font-weight:600; letter-spacing:-.02em; margin:0 0 1rem }
+p{ margin:0 0 1.1rem }
+.tag{ font-family:var(--mono); font-size:.6875rem; font-weight:500; letter-spacing:.16em; text-transform:uppercase; color:var(--text-3); margin-bottom:1rem }
+.lede{ font-size:1.15rem; color:var(--text-2); margin-block:1.4rem 0 }
+section{ margin-top:clamp(2.5rem,5vw,3.5rem) }
+
+ol.steps{ counter-reset:s; list-style:none; margin:0; padding:0 }
+ol.steps li{
+  counter-increment:s; position:relative;
+  padding:1.3rem 1.5rem 1.3rem 4rem;
+  background:var(--surface); border-radius:var(--r-lg);
+  box-shadow:var(--shadow-card); margin-bottom:.75rem;
+}
+ol.steps li::before{
+  content:counter(s,decimal-leading-zero);
+  position:absolute; left:1.4rem; top:1.4rem;
+  width:1.9rem; height:1.9rem; border-radius:50%;
+  background:var(--ink); color:#fff;
+  font-family:var(--mono); font-size:.72rem; font-weight:600;
+  display:grid; place-items:center;
+}
+ol.steps strong{ font-weight:600 }
+ol.steps span{ display:block; color:var(--text-2); font-size:.95rem; margin-top:.35rem }
+
+table{ width:100%; border-collapse:collapse; background:var(--surface); border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow-card) }
+th,td{ text-align:left; padding:1rem 1.3rem; border-bottom:1px solid var(--border); vertical-align:top; font-size:.95rem }
+th{ font-family:var(--mono); font-weight:500; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--text-3) }
+tr:last-child td{ border-bottom:0 }
+td:first-child{ font-weight:500; width:42% }
+td span{ color:var(--text-2) }
+
+.callout{
+  display:flex; gap:1rem; align-items:flex-start;
+  padding:1.3rem 1.5rem; background:var(--surface-sunk);
+  border-radius:var(--r-md); color:var(--text-2); font-size:.95rem;
+}
+.callout::before{ content:""; flex:0 0 auto; width:3px; align-self:stretch; background:var(--energy); border-radius:2px }
+.btn{
+  display:inline-flex; align-items:center; min-height:52px;
+  padding:1rem 1.8rem; border-radius:var(--r-full);
+  background:var(--ink); color:#fff; text-decoration:none;
+  font-size:.9375rem; font-weight:600;
+}
+footer{ border-top:1px solid var(--border); margin-top:clamp(3rem,6vw,4.5rem); padding-block:2rem 2.5rem }
+footer p{ margin:0; color:var(--text-3); font-size:.875rem }
+footer a{ color:var(--text-2) }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="shell masthead__inner">
+    <a class="wordmark" href="./"><img src="assets/icon.png" alt="">Calora AI</a>
+    <a class="back" href="./">← Back to the site</a>
+  </div>
+</header>
+
+<main class="shell">
+  <p class="tag">Calora AI · Bekhruz Valijonov</p>
+  <h1>Deleting your data</h1>
+  <p class="lede">
+    <strong>Calora AI</strong>, published by <strong>Bekhruz Valijonov</strong>, keeps
+    your data in a database on your own phone. There is no account and no server of
+    ours, so deleting your data is something you do in the app itself — it takes about
+    fifteen seconds and needs no request to anyone.
+  </p>
+
+  <section>
+    <h2>How to delete everything</h2>
+    <ol class="steps">
+      <li><strong>Open Calora AI on your phone.</strong>
+        <span>Deletion happens on the device that holds the data.</span></li>
+      <li><strong>Go to Profile → Privacy.</strong>
+        <span>Profile is the fourth tab in the bottom navigation bar.</span></li>
+      <li><strong>Tap “Delete all local data”.</strong>
+        <span>It is the last item on the screen, under “Delete”.</span></li>
+      <li><strong>Confirm “Delete everything?”.</strong>
+        <span>The app erases the data immediately. There is no undo and no copy anywhere.</span></li>
+    </ol>
+    <p style="margin-top:1.4rem; color:var(--text-2); font-size:.95rem">
+      The same screen also offers narrower deletions if you do not want to erase
+      everything: <strong>Clear AI memory</strong>, <strong>Delete coach
+      conversation</strong> and <strong>Delete stored API keys</strong>. Uninstalling
+      the app removes all of it as well, since nothing is stored outside the device.
+    </p>
+  </section>
+
+  <section>
+    <h2>What is deleted, and what is kept</h2>
+    <table>
+      <thead>
+        <tr><th>Data</th><th>What happens</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Food log and daily totals</td><td><span>Deleted from the device immediately. Retention afterwards: none.</span></td></tr>
+        <tr><td>Weight history and goals</td><td><span>Deleted from the device immediately. Retention afterwards: none.</span></td></tr>
+        <tr><td>Profile — name, height, age, diet preferences, allergies</td><td><span>Deleted from the device immediately. Retention afterwards: none.</span></td></tr>
+        <tr><td>Coach conversation and AI memory</td><td><span>Deleted from the device immediately. Retention afterwards: none.</span></td></tr>
+        <tr><td>Saved meals and scanned barcode products</td><td><span>Deleted from the device immediately. Retention afterwards: none.</span></td></tr>
+        <tr><td>API keys for AI providers</td><td><span>Deleted from Android's secure storage immediately. Retention afterwards: none.</span></td></tr>
+        <tr><td>Photographs of meals</td><td><span>Never stored by the app. A photo exists only for the duration of the request you send to your AI provider.</span></td></tr>
+        <tr><td>Anything held by us, the developer</td><td><span>Nothing. Calora AI has no server, no account system and no analytics, so there is no copy of your data to delete or retain.</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Data you have sent to an AI provider</h2>
+    <p>
+      If you used the coach or photo recognition, those requests went from your phone
+      directly to the AI provider — the built-in one, or the provider whose key you
+      entered. Deleting your data in Calora AI removes it from your device, but it
+      cannot reach into someone else's service.
+    </p>
+    <div class="callout">
+      To have that history removed too, ask the provider directly — OpenAI, Anthropic,
+      Google or OpenRouter, whichever you used. Each one keeps request logs for its own
+      period, set by its own terms, and each has its own deletion procedure. Calora AI
+      is not party to that request and cannot see it.
+    </div>
+  </section>
+
+  <section>
+    <h2>If you cannot open the app</h2>
+    <p>
+      If the app is already uninstalled, the data went with it. If you have any other
+      question about deletion, write to us and we will answer.
+    </p>
+    <a class="btn" href="mailto:mavensystemssupport@gmail.com?subject=Calora%20AI%20—%20data%20deletion">
+      mavensystemssupport@gmail.com
+    </a>
+  </section>
+</main>
+
+<footer>
+  <div class="shell">
+    <p>
+      Calora AI · <a href="https://bekhruzvalijonov.github.io/calora-privacy/privacy-en">Privacy policy</a>
+      · <a href="./">calora-info</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
