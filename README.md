@@ -1,15 +1,15 @@
 # calora-info
 
-Сайт приложения **Calora AI** — трекера питания, который держит данные на
-телефоне: без аккаунта, без подписки и без нашего сервера.
+The website for **Calora AI** — a nutrition tracker that keeps your data on your
+phone: no account, no subscription, and no server of ours.
 
 <https://bekhruzvalijonov.github.io/calora-info/>
 
-Одна страница: `index.html` со стилями и скриптом внутри, рядом `assets/` со
-скриншотами и значком. Ни сборки, ни зависимостей — GitHub Pages отдаёт файл
-как есть.
+One page: `index.html` with its styles and script inline, plus `assets/` for the
+screenshots and the icon. No build step and no dependencies — GitHub Pages
+serves the file as it is.
 
-Политика конфиденциальности живёт отдельно, в репозитории `calora-privacy`:
+The privacy policy lives in a separate repository, `calora-privacy`:
 <https://bekhruzvalijonov.github.io/calora-privacy/privacy-en>
 
-Исходный код приложения в этот репозиторий не входит.
+The application's source code is not part of this repository.
